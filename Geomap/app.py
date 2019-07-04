@@ -5,6 +5,7 @@ from flask import Flask, render_template, redirect, jsonify
 import pandas as pd
 import time
 
+
 app = Flask(__name__)
 conn = 'mongodb://localhost:27017'
 client = pymongo.MongoClient(conn)
