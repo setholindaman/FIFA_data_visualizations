@@ -38,3 +38,7 @@ body,
 .legend .out-of-order {
   color: #007dff;
 }
+
+.leaflet-popup-content {
+  color: lightblue;
+}
