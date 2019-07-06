@@ -42,7 +42,7 @@ function changePlayer(data) {
 //####################### Player comparison chart   #####################
 
 var svgWidth = document.getElementById('container').offsetWidth * 0.5;
-var svgHeight = window.innerHeight * 1;
+var svgHeight = window.innerHeight * 0.75;
 
 var margin = {
     top: svgHeight * 0.1,

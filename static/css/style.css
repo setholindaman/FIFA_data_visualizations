@@ -1,5 +1,13 @@
+/* body {
+  background-color: rgb(168, 168, 168);
+} */
+
 #jumbo_text {
     padding: 1px;
+}
+
+#main_info {
+  padding-bottom: 2px;
 }
 
 p, h1, h2, li {
@@ -9,6 +17,11 @@ p, h1, h2, li {
 h1 {
     color: whitesmoke !important;
     text-shadow:5px 5px 5px black;
+}
+
+.barcolumn {
+  box-shadow: 5px 10px 10px grey; 
+  padding: 10px;
 }
 
 /* html {
@@ -33,6 +46,8 @@ body, */
 .maprow {
   height: 60vh;
   margin-bottom: 10vh;
+  margin-top: 5vh;
+  box-shadow: 5px 5px 10px 5px grey;
 
 }
 
@@ -40,6 +55,18 @@ body, */
   /* position: absolute; */
   height: 60vh;
   width: 100%;
+}
+
+.mapcolumn {
+  padding: 0px;
+}
+
+#main_info {
+  border-width:2px;  
+  border-style:solid;
+  border-color: rgb(122, 122, 122);
+  border-radius: 5px;
+  padding: 15px;
 }
 
 .legend {

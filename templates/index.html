@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible"
           content="ie=edge">
     <title>World Soccer info</title>
+
+    <!-- stylesheets -->
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet"
@@ -18,6 +20,8 @@
           href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
           integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
           crossorigin="" />
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -32,8 +36,6 @@
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
-    <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
-    <!-- <link rel="stylesheet" href="../static/css/d3style.css"> -->
 </head>
 
 <body>
@@ -48,41 +50,43 @@
                 </div>
             </div>
         </div>
-        <div class="row"
-             id="main_info">
-            <h2>Where do the worlds top mens teams and players come from?</h2>
-            <p>With the womens World Cup in full swing and the U.S. womens team doing so well
-                we noticed the U.S. mens team consistently performs poorly. This lead us to ask the
-                question "where do the worlds top mens teams players come from and where do they play primarily"</p>
-            <p>Project contibutors</p>
+        <div class="row" id="main_info">
+            <h2>Where do the world's top men's teams and players come from?</h2>
+            <strong>With the women's World Cup in full swing along with regional men's cups being played, we recalled 
+                the U.S. women's team consistently doing well while the U.S. men's team usually performing poorly in the World Cup. This led us to ask a few
+                questions, primarily, "Who are the world's top men's team players and where do they come from?"</strong>
+            <br>
+            <br>
+            <p style="text-decoration-line: underline;">Project Contibutors</p>
             <ul>
-                <li>Matt Stewart: Player rating chart and server side setup contribution</li>
+                <li>Matthew Stewart: Top Players bar chart and server side setup contribution</li>
                 <li>Tatsuya Sakurai: Field rating chart and server side setup contribution</li>
                 <li>Tai Johnson: Server side setup and html page</li>
-                <li>Seth Oliver: Team rating chart</li>
+                <li>Seth Oliver: Team rating chart and server side contribution</li>
             </ul>
             <a href="https://www.kaggle.com/karangadiya/fifa19"
                target="_blank">Link to our Dataset</a>
-            <P>The dataset we found is from the video game 2019 edition. We naturally asked the following question
-                before proceeding,
-                'How does FIFA calculate its player data when creating its games compared to the stats and facts about
-                the actual
-                player and is it accurately reflective to real world players enough in order for us make a good
-                comparison?
+            <P>The dataset we found is from the FIFA video game 2019 edition, which is based on data from the 2018 season. We naturally asked the following question
+                before proceeding, "How does FIFA calculate its player data when creating its games compared to the stats and facts about
+                the actual players, and is it accurately reflective to the real world enough in order for us make a good
+                comparison?"
                 <a href="https://datamakespossible.westerndigital.com/meet-data-master-ea-sports-fifa/"
                    target="_blank">Here</a> is a
-                link
-                explaining in detail how FIFA comes up with the data they use for their games</p>
+                link explaining in better detail how EA comes up with the data they use for their FIFA games.</p>
         </div>
+        <h4 style="text-align:center; text-decoration-line: underline;">
+            Top Countries by Average Rating</h4>
         <div class="row maprow">
-            <div class="col-md-12">
+            <div class="col-md-12 mapcolumn">
                 <div id="map">
                     <!-- Geomap goes here from leaflet -->
                 </div>
             </div>
         </div>
         <div class="row svgRow">
-            <div class="col-md-6">
+            <div class="col-md-6" style="box-shadow: 0 10px 10px grey;">
+                <h4 style="text-align:center; text-decoration-line: underline;">
+                    Player Positional Strengths</h4>
                 <div class="form-group col-3">
                     <label for="top100players">Select Player:</label>
                     <select class="form-control"
@@ -295,7 +299,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 barcolumn">
                 <div id="bar">
                     <!-- We append bar chart here. -->
                 </div>
@@ -306,7 +310,6 @@
     </div>
     <script src="{{ url_for('static', filename='js/config.js') }}"></script>
     <script src="{{ url_for('static', filename='js/logic.js') }}"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js"></script> -->
     <script src="{{ url_for('static', filename='js/chroma.js') }}"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 

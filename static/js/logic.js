@@ -43,11 +43,11 @@ function createMarkers(fifaDataArray) {
     for (var index = 0; index < fifaDataArray.length; index++) {
         var country = fifaDataArray[index];
 
-        var countriesMarker = L.circle([country.Latitude, country.Longitude], {
+        var countriesMarker = L.circleMarker([country.Latitude, country.Longitude], {
             fillOpacity: 0.8,
             color: 'white',
             fillColor: '#00a0d1',
-            radius: country.Overall * 5000
+            radius: country.Overall * 0.15
         }).bindPopup("<h3>" + country.Nationality + "<h3><h3>Overall Average Score: " + country.Overall + "<h3>");
 
         countriesMarkers.push(countriesMarker);
