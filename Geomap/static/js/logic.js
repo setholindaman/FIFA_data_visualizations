@@ -19,7 +19,7 @@ var lightmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png
     maxZoom: 12,
     id: "mapbox.light",
     accessToken: api_key
-}).addTo(map);
+});
 
 
 // Perform a GET request to the query URL
@@ -41,24 +41,27 @@ d3
 
 function createMarkers(fifaDataArray) {
 
-    // Initialize an array to hold bike markers
+    // Initialize an array to hold country markers
     var countriesMarkers = [];
 
-    // Loop through the stations array
+    // Loop through the country array
     for (var index = 0; index < fifaDataArray.length; index++) {
         var country = fifaDataArray[index];
 
-        var countriesMarker = L.circle([country.Latitude, country.Longitude], {
+        var countriesMarker = L.circleMarker([country.Latitude, country.Longitude], {
             fillOpacity: 0.8,
             color: 'white',
             fillColor: '#00a0d1',
-            radius: country.Overall * 5000
-        }).bindPopup("<h3>" + country.Nationality + "<h3><h3>Overall Average Score: " + country.Overall + "<h3>");
+            radius: (country.Overall * 0.2)
+        })
+        .bindPopup("<h3>" + country.Nationality + "<h3><h3>Overall Average Score: " + country.Overall + "<h3>")
+        // .addTo(map);
 
         countriesMarkers.push(countriesMarker);
     }
 
-    // Create a layer group made from the bike markers array, pass it into the createMap function
+
+    // Create a layer group made from the markers array, pass it into the createMap function
 
     var countryLayerGroup = L.layerGroup(countriesMarkers).addTo(map);
 

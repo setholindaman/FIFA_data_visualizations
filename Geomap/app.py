@@ -35,7 +35,7 @@ def geomap():
     countries_list = fifa_data.find({})
 
     countries_list_db = pd.DataFrame(list(countries_list))[['Nationality', 'Overall']].groupby('Nationality').mean()
-
+    
     countries_with_coords = fifa_country_data.find({}, {'name':1, 'latitude':1, 'longitude':1, '_id':0})
 
     name_list = []
